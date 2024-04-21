@@ -9,15 +9,15 @@ interface KOItemProps {
 function KOItem({ klasse, selected, onSelect }: KOItemProps) {
 
     const bgstyle = {
-        background: klasse.bgcolor,
-        color: klasse.fgcolor,
+        background: klasse.color.bgcolor,
+        color: klasse.color.fgcolor,
     }
 
     const selectedStyle = {
-        border: selected ? "3px dashed lightgreen" : "none",
+        border: selected ? "3px dashed var(--color-accent)" : "none",
     }
 
-    useDragger(klasse.id.toString());
+    useDragger(klasse.id);
 
     return (
         <div className="diggas" id={klasse.id.toString()} style={selectedStyle} onClick={() => onSelect(klasse.id)}>

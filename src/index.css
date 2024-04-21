@@ -1,10 +1,26 @@
 :root {
+    --color-bg: #FAFAFA;
+    --color-fg: #0B0B0B;
+    --color-primary: #E9E9E9;
+    --color-primary2: #C2C2C2;
+    --color-secondary: #252525;
+    --color-accent: #6181CA;
+    --color-shadow: #C6C6C6;
+    --color-red: #E34F4F;
+    --color-border: var(--color-primary2);
+
+    font-family: monospace;
+}
+[data-theme="dark"] {
     --color-bg: #0B0B0B;
-    --color-fg: #F5FFF0;
-    --color-primary: #3D3D3D;
-    --color-secondary: #46B129;
-    --color-accent: #C29700;
-    --color-shadow: #060606;
+    --color-fg: #FAFAFA;
+    --color-primary: #212121;
+    --color-primary2: #2C2C2C;
+    --color-secondary: #F1F1F1;
+    --color-accent: #506DDC;
+    --color-shadow: #141414;
+    --color-red: #FF3A3A;
+    --color-border: #5B5B5B;
 }
 
 body {
@@ -32,9 +48,12 @@ main {
     display: flex;
     flex-direction: column;
     position: relative;
+    background-color: var(--color-bg);
     height: 100vh;
-    width: 300px;
-    overflow: hidden;
+    width: 320px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    align-items: center;
 }
 
 button {
@@ -43,6 +62,9 @@ button {
     background-color: var(--color-primary);
     color: var(--color-fg);
     cursor: pointer;
+    margin: 5px 15px;
+    border-radius: 2px;
+    min-width: 200px;
 }
 button:hover, button:active {
     background: var(--color-secondary);
@@ -52,34 +74,57 @@ button:hover, button:active {
 .accent-btn {
     background: var(--color-accent);
     color: var(--color-primary);
+    margin-top: 10px;
 }
 
 .deleteButton {
     padding: 0;
+    min-width: 31px;
     width: 31px;
     height: 36px;
-    background: var(--primary-color);
-    border: 1px dashed #FF3232;
+    background: var(--color-bg);
+    border: 1px solid var(--color-red);
     margin: 0px 5px;
     /* border-radius: 50%; */
 }
 .deleteButton:hover {
-    background: #FF3232;
+    background: var(--color-red);
+    color: var(--color-fg);
+}
+
+.extra-delete {
+    margin: 30px 0;
+    background-color: var(--color-red);
+}
+
+p {
+    margin: 10px 0 5px 0;
+    color: var(--color-fg);
+}
+
+.small .react-colorful {
+    height: 150px;
+    cursor: pointer;
+}
+
+hr {
+    border-top: 1px solid var(--color-primary);
+    min-width: 220px;
 }
 
 input {
     padding: 10px;
-    background: #1d1d1d;
+    background: var(--color-primary);
     width: 150px;
-    border: 1px dashed #444444;
+    border: 1px solid var(--color-border);
     /* border-radius: 10px; */
-    color: white;
+    color: var(--color-fg);
     margin: 3px 0 3px 5px;
 }
 input:focus {
     outline: none;
     border-radius: 0px;
-    border: 1px dashed var(--secondary-color);
+    border: 1px dashed var(--color-border);
 }
 
 .diggas {
@@ -97,7 +142,7 @@ input:focus {
 }
 
 .app-header {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   text-align: center;
   padding: 10px 30px;
@@ -116,11 +161,11 @@ input:focus {
 }
 
 .property-name {
-  font-size: 21px;
+  font-size: 18px;
 }
 
 .property-value {
-  font-size: 21px;
+  font-size: 18px;
   padding-left: 10px;
 }
 
@@ -139,11 +184,11 @@ input:focus {
 }
 
 .method-name {
-  font-size: 21px;
+  font-size: 18px;
 }
 
 .polka-pattern {
     background-color: var(--color-bg);
-    background-image: radial-gradient(var(--color-primary) 1.1px, var(--color-bg) 1.1px);
+    background-image: radial-gradient(var(--color-primary2) 1.1px, var(--color-bg) 1.1px);
     background-size: 22px 22px;
 }

@@ -13,7 +13,15 @@ interface Klasse {
     name: string,
     attributes: Attribute[],
     methodes: Methode[],
-    bgcolor: string,
-    fgcolor: string,
+    color: {
+        bgcolor: string,
+        fgcolor: string,
+    },
+    // position: {
+    //     startX: number,
+    //     startY: number,
+    //     lastX: number,
+    //     lastY: number,
+    // },
 }
 
