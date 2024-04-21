@@ -19,7 +19,7 @@ function useDragger(id: number): void {
             coords.current.startX = e.clientX;
             coords.current.startY = e.clientY;
         }
-        const onMouseUp = (e: MouseEvent) => {
+        const onMouseUp = () => {
             isClicked.current = false;
             coords.current.lastX = target.offsetLeft;
             coords.current.lastY = target.offsetTop;
